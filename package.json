@@ -1,0 +1,50 @@
+{
+  "name": "pind",
+  "version": "0.0.1",
+  "description": "Tiny asynchronous action timer.",
+  "source": "index.tsx",
+  "main": "dist/pind.js",
+  "module": "dist/pind.es.js",
+  "unpkg": "dist/pind.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle build --jsx react",
+    "watch": "microbundle watch --compress false --jsx react",
+    "publish": "npm publish",
+    "test": "ava test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/pind.git"
+  },
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/pind/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/pind#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "ava": "^2.4.0",
+    "microbundle": "^0.11.0",
+    "ts-node": "^8.4.1"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "tackjs": "^1.1.2"
+  }
+}
