@@ -1,6 +1,6 @@
 {
   "name": "pind",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny React util to pin an element to another.",
   "source": "index.tsx",
   "main": "dist/pind.js",
