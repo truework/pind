@@ -7,6 +7,7 @@ export function Pin({
   to,
   at,
   deps = [],
+  style = {},
   children
 }: {
   pinned: boolean;
@@ -21,6 +22,7 @@ export function Pin({
     | "bottomLeft"
     | "bottomRight";
   deps?: any[];
+  style?: React.HTMLAttributes<HTMLDivElement>["style"];
   children: React.ReactNode | React.ReactNode[];
 }) {
   const pin = React.createRef<HTMLDivElement>();
@@ -31,7 +33,16 @@ export function Pin({
 
   return pinned
     ? createPortal(
-        <div ref={pin} style={{ position: "absolute", top: 0, left: 0 }}>
+        <div
+          ref={pin}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 9999,
+            ...style
+          }}
+        >
           {children}
         </div>,
         document.body
