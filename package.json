@@ -1,7 +1,7 @@
 {
   "name": "pind",
   "version": "0.0.1",
-  "description": "Tiny asynchronous action timer.",
+  "description": "Tiny React util to pin an element to another.",
   "source": "index.tsx",
   "main": "dist/pind.js",
   "module": "dist/pind.es.js",
@@ -13,9 +13,10 @@
   "scripts": {
     "build": "microbundle build --jsx react",
     "watch": "microbundle watch --compress false --jsx react",
-    "publish": "npm publish",
-    "test": "ava test.ts"
+    "postbuild": "npm run test",
+    "test": "jest test.tsx"
   },
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/estrattonbailey/pind.git"
@@ -27,24 +28,40 @@
   },
   "homepage": "https://github.com/estrattonbailey/pind#readme",
   "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.3",
-    "ava": "^2.4.0",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^25.1.2",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
     "microbundle": "^0.11.0",
-    "ts-node": "^8.4.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   },
-  "ava": {
-    "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": {
+          "noErrorTruncation": true,
+          "noImplicitAny": true,
+          "strictNullChecks": true,
+          "jsx": "react"
+        }
+      }
+    }
   },
   "dependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "tackjs": "^1.1.2"
+    "tackjs": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.9",
+    "react-dom": ">= 16.9"
   }
 }

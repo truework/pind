@@ -1,8 +1,14 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
-import tack from "tackjs";
+import { tack } from "tackjs";
 
-export default function Pin(props: {
+export function Pin({
+  pinned,
+  to,
+  at,
+  deps = [],
+  children
+}: {
   pinned: boolean;
   to: React.RefObject<HTMLElement>;
   at:
@@ -14,18 +20,19 @@ export default function Pin(props: {
     | "topRight"
     | "bottomLeft"
     | "bottomRight";
+  deps?: any[];
   children: React.ReactNode | React.ReactNode[];
 }) {
   const pin = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    pin.current && tack(pin.current, props.to.current, props.at);
-  }, [props.pinned, props.to.current, props.at]);
+    if (pin.current && to.current) tack(pin.current, to.current, at);
+  }, [pinned, to.current, at, ...deps]);
 
-  return props.pinned
+  return pinned
     ? createPortal(
         <div ref={pin} style={{ position: "absolute", top: 0, left: 0 }}>
-          {props.children}
+          {children}
         </div>,
         document.body
       )
