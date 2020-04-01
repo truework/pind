@@ -1,6 +1,6 @@
-# pind
-Tiny React util to pin an element to another. **~200 bytes gzipped,** ~700 bytes
-with dependencies.
+# pind ![npm](https://img.shields.io/npm/v/pind) [![](https://badgen.net/bundlephobia/minzip/pind)](https://bundlephobia.com/result?p=pind)
+
+Tiny React util to pin an element to another.
 
 ### Install
 ```

@@ -36,7 +36,7 @@ export function Pin({
         <div
           ref={pin}
           style={{
-            position: "absolute",
+            position: "fixed",
             top: 0,
             left: 0,
             zIndex: 9999,
