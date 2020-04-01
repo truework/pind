@@ -29,14 +29,14 @@ export function Pin({
 
   React.useEffect(() => {
     if (pin.current && to.current) tack(pin.current, to.current, at);
-  }, [pinned, to.current, at, ...deps]);
+  }, [pinned, pin.current, to.current, at, ...deps]);
 
   return pinned
     ? createPortal(
         <div
           ref={pin}
           style={{
-            position: "fixed",
+            position: "absolute",
             top: 0,
             left: 0,
             zIndex: 9999,
