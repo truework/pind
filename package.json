@@ -58,7 +58,7 @@
     }
   },
   "dependencies": {
-    "tackjs": "^2.0.0"
+    "tackjs": "^2.1.0"
   },
   "peerDependencies": {
     "react": ">= 16.9",
