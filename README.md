@@ -40,4 +40,4 @@ render(() => {
 ```
 
 ### License
-MIT License © [Eric Bailey](https://estrattonbailey.com)
+MIT License © [Truework](https://www.truework..com)
